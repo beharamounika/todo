@@ -43,7 +43,7 @@ input {
     outline: none;
     background: transparent;
     padding: 10px;
-    font-weight: 14px;
+    font-size: 14px;
 }
 button {
     border: none;
@@ -55,45 +55,108 @@ button {
     cursor: pointer;
     border-radius: 40px;
 }
-ul li{
-    list-style:none;
+ul li {
+    list-style: none;
     font-size: 17px;
     padding: 12px 8px 12px 50px;
-    user-select:none;
-     cursor: pointer;
-     position:relative;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
 }
-ul li::before{
+ul li::before {
     content: '';
-    position:absolute;
+    position: absolute;
     height: 28px;
-    width:28px;
+    width: 28px;
     border-radius: 50%;
     background-image: url(unchecked.jpeg);
     background-size: cover;
     background-position: center;
-    top:12px;
-    left:8px;
+    top: 12px;
+    left: 8px;
 }
-ul li.checked{
-    color:darkblue;
-    text-decoration:line-through;
+ul li.checked {
+    color: darkblue;
+    text-decoration: line-through;
 }
-ul li.checked::before{
+ul li.checked::before {
     background-image: url(checked.jpeg);
 }
-ul li span{
-    position:absolute;
+ul li span {
+    position: absolute;
     right: 0;
-    top:5px;
+    top: 5px;
     width: 40px;
     height: 40px;
-    font-size:22px;
-    color:darkblue;
+    font-size: 22px;
+    color: darkblue;
     line-height: 40px;
     text-align: center;
     border-radius: 50%;
 }
-ul li span:hover{
+ul li span:hover {
     background-color: whitesmoke;
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+    .todo-list {
+        margin: 50px auto 20px;
+        padding: 20px 15px 35px;
+    }
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 10px;
+    }
+    button {
+        width: 100%;
+        margin-top: 10px;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    ul li {
+        font-size: 15px;
+        padding: 10px 8px 10px 40px;
+    }
+    ul li::before {
+        height: 24px;
+        width: 24px;
+        top: 10px;
+        left: 5px;
+    }
+    ul li span {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
+@media (max-width: 480px) {
+    .todo-list {
+        padding: 15px 10px 25px;
+    }
+    .row {
+        padding-left: 5px;
+    }
+    button {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+    ul li {
+        font-size: 13px;
+        padding: 8px 5px 8px 35px;
+    }
+    ul li::before {
+        height: 20px;
+        width: 20px;
+        top: 8px;
+        left: 3px;
+    }
+    ul li span {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+        line-height: 25px;
+    }
 }
